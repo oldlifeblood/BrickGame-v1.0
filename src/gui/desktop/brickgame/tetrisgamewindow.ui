@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TetrisGame</class>
+ <widget class="QDialog" name="TetrisGame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>425</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tetris Game</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QDialog {
+        background-color: #282828;
+    }
+   </string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="margin" stdset="0">
+    <number>10</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="gameArea">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_gameArea">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="margin" stdset="0">
+       <number>10</number>
+      </property>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_infoPanel">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <property name="margin" stdset="0">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="nextPieceLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+         QLabel {
+             color: #ffffff;
+         }
+        </string>
+       </property>
+       <property name="text">
+        <string>Next Piece:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="nextPieceDisplay">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border:1.5px solid yellow;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_nextPieceDisplay">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="margin" stdset="0">
+           <number>10</number>
+          </property>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+         QLabel {
+             color: #ffffff;
+         }
+        </string>
+         </property>
+         <property name="text">
+          <string>LEVEL</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLCDNumber" name="levelDisplay">
+         <property name="styleSheet">
+          <string notr="true">
+QLCDNumber {
+background-color: #000000;
+color: #00ff00;
+border: 2px solid #00ff00;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="scoreLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+         QLabel {
+             color: #ffffff;
+         }
+        </string>
+       </property>
+       <property name="text">
+        <string>Score:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_score">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="margin" stdset="0">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QLCDNumber" name="scoreDisplay">
+         <property name="styleSheet">
+          <string notr="true">
+           QLCDNumber {
+               background-color: #000000;
+               color: #00ff00;
+               border: 2px solid #00ff00;
+           }
+          </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="highScoreLabel">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+         QLabel {
+             color: #ffffff;
+         }
+        </string>
+       </property>
+       <property name="text">
+        <string>High Score:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_highScore">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="margin" stdset="0">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QLCDNumber" name="highScoreDisplay">
+         <property name="styleSheet">
+          <string notr="true">
+           QLCDNumber {
+               background-color: #000000;
+           background-color: #000000;
+               color: #00ff00;
+               border: 2px solid #00ff00;
+           }
+          </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="margin" stdset="0">
+        <number>10</number>
+       </property>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="backButton">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton {
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 10px;
+padding: 10px;
+}
+QPushButton
+{
+background-color: #45a049;
+}
+QPushButton
+{
+background-color: #388e3c;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Back to Menu</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
